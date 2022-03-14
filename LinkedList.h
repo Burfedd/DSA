@@ -8,6 +8,7 @@ class LinkedList {
 	public:
 	Node* head;
 	void Insert(int a);
+	void Insert(int data, int position);
 	void Print();
 };
 

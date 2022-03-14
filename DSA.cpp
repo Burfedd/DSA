@@ -13,5 +13,12 @@ int main()
         list->Insert(x);
         list->Print();
     }
+
+    std::cout << "Which number and where do you want no insert?" << std::endl;
+    int num, pos;
+    std::cin >> num;
+    std::cin >> pos;
+    list->Insert(num, pos);
+    list->Print();
 }
 
