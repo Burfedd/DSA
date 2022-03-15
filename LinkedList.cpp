@@ -76,3 +76,29 @@ void LinkedList::Print() {
 	}
 	std::cout << std::endl;
 }
+
+void LinkedList::PrintRecursively(bool reverse) {
+	if (reverse) {
+		std::cout << "Recursively printing the list is reverse order..." << std::endl;
+		PrintNodeReverse(head);
+		std::cout << std::endl;
+	} else {
+		std::cout << "Recursively printing the list..." << std::endl;
+		PrintNode(head);
+		std::cout << std::endl;
+	}
+}
+
+void LinkedList::PrintNode(Node* node) {
+	std::cout << ' ' << node->data << ' ';
+	if (node->next != nullptr) {
+		PrintNode(node->next);
+	}
+}
+
+void LinkedList::PrintNodeReverse(Node* node) {
+	if (node->next != nullptr) {
+		PrintNodeReverse(node->next);
+	}
+	std::cout << ' ' << node->data << ' ';
+}

@@ -30,5 +30,8 @@ int main()
     std::cout << "Reversing a linked list iteratively..." << std::endl;
     list->Reverse(false);
     list->Print();
+
+    list->PrintRecursively(false);
+    list->PrintRecursively(true);
 }
 

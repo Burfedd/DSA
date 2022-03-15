@@ -12,5 +12,10 @@ class LinkedList {
 	void Delete(int position);
 	void Reverse(bool recursive);
 	void Print();
+	void PrintRecursively(bool reverse);
+
+	private:
+	void PrintNode(Node* node);
+	void PrintNodeReverse(Node* node);
 };
 
