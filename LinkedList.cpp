@@ -9,6 +9,11 @@ void LinkedList::Insert(int a) {
 }
 
 void LinkedList::Insert(int data, int position) {
+	if (position == 0) {
+		LinkedList::Insert(data);
+		return;
+	}
+
 	int currentPos = 0;
 	Node* currentNode = head;
 
@@ -20,6 +25,26 @@ void LinkedList::Insert(int data, int position) {
 	Node* nextNode = currentNode->next;
 	currentNode->next = newNode;
 	newNode->next = nextNode;
+}
+
+void LinkedList::Delete(int position) {
+	Node* tempPrevious = head;
+	// Position 0 - head
+	if (position == 0) {
+		head = head->next;
+		delete tempPrevious;
+		return;
+	}
+	
+	
+	// Nodes before and after position
+	for (int i = 0; i < position - 1; i++) {
+		tempPrevious = tempPrevious->next;
+	}
+	Node* tempActual = tempPrevious->next;
+	Node* tempNext = tempActual->next;
+	tempPrevious->next = tempNext;
+	delete tempActual;
 }
 
 void LinkedList::Print() {

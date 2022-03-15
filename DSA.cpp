@@ -20,5 +20,11 @@ int main()
     std::cin >> pos;
     list->Insert(num, pos);
     list->Print();
+
+    std::cout << "Number at which position would you like to delete?" << std::endl;
+    int deletePos;
+    std::cin >> deletePos;
+    list->Delete(deletePos);
+    list->Print();
 }
 

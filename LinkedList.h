@@ -9,6 +9,7 @@ class LinkedList {
 	Node* head;
 	void Insert(int a);
 	void Insert(int data, int position);
+	void Delete(int position);
 	void Print();
 };
 
