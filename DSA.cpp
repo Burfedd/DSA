@@ -26,5 +26,9 @@ int main()
     std::cin >> deletePos;
     list->Delete(deletePos);
     list->Print();
+
+    std::cout << "Reversing a linked list iteratively..." << std::endl;
+    list->Reverse(false);
+    list->Print();
 }
 

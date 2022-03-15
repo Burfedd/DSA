@@ -47,6 +47,26 @@ void LinkedList::Delete(int position) {
 	delete tempActual;
 }
 
+
+void LinkedList::Reverse(bool recursive) {
+	if (recursive) {
+
+	} else {
+		Node* current = head;
+		Node* savedLink = current->next;
+		current->next = nullptr;
+
+		while (savedLink != nullptr) {
+			Node* previous = current;
+			current = savedLink;
+			savedLink = current->next;
+			current->next = previous;
+		}
+
+		head = current;
+	}
+}
+
 void LinkedList::Print() {
 	Node* nodePtr = head;
 	std::cout << "Linked list elements: ";
