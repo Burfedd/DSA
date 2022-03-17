@@ -9,6 +9,7 @@ class DoublyLinkedList {
 	public:
 	Node_dll* head;
 	void InsertAtHead(int data);
+	void InsertAtTail(int data);
 	void Print();
 	void ReversePrint();
 

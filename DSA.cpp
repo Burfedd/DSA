@@ -61,6 +61,16 @@ void DoublyLinkedListRoutine() {
         list->Print();
     }
 
+    std::cout << "How many numbers would you like to insert at tail?" << std::endl;
+    int m, y;
+    std::cin >> m;
+    for (int i = 0; i < m; i++) {
+        std::cout << "Enter a number: ";
+        std::cin >> y;
+        list->InsertAtTail(y);
+        list->Print();
+    }
+
     std::cout << "Printing the list in reverse order...";
     list->ReversePrint();
 }

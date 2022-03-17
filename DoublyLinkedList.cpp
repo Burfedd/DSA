@@ -20,6 +20,20 @@ void DoublyLinkedList::InsertAtHead(int data) {
 	}
 }
 
+void DoublyLinkedList::InsertAtTail(int data) {
+	Node_dll* node = CreateNewNode(data);
+	if (head == nullptr) {
+		head = node;
+	} else {
+		Node_dll* temp = head;
+		while (temp->next != nullptr) {
+			temp = temp->next;
+		}
+		temp->next = node;
+		node->prev = temp;
+	}
+}
+
 void DoublyLinkedList::Print() {
 	Node_dll* temp = head;
 	std::cout << "Doubly linked list elements:";
