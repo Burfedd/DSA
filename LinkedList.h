@@ -17,5 +17,6 @@ class LinkedList {
 	private:
 	void PrintNode(Node* node);
 	void PrintNodeReverse(Node* node);
+	void ReverseRecursively(Node* node);
 };
 

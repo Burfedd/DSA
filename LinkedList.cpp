@@ -50,7 +50,7 @@ void LinkedList::Delete(int position) {
 
 void LinkedList::Reverse(bool recursive) {
 	if (recursive) {
-
+		ReverseRecursively(head);
 	} else {
 		Node* current = head;
 		Node* savedLink = current->next;
@@ -65,6 +65,17 @@ void LinkedList::Reverse(bool recursive) {
 
 		head = current;
 	}
+}
+
+void LinkedList::ReverseRecursively(Node* node) {
+	if (node->next == nullptr) {
+		head = node;
+		return;
+	}
+	ReverseRecursively(node->next);
+	Node* previous = node->next;
+	previous->next = node;
+	node->next = nullptr;
 }
 
 void LinkedList::Print() {

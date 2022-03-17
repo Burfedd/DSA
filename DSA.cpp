@@ -31,7 +31,12 @@ int main()
     list->Reverse(false);
     list->Print();
 
+    std::cout << "Printing with recursion in both orders..." << std::endl;
     list->PrintRecursively(false);
     list->PrintRecursively(true);
+
+    std::cout << "Reversing the list with recursion..." << std::endl;
+    list->Reverse(true);
+    list->Print();
 }
 
