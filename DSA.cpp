@@ -1,8 +1,17 @@
 #include <iostream>
 #include "LinkedList.h"
+#include "DoublyLinkedList.h"
+
+void LinkedListRoutine();
+void DoublyLinkedListRoutine();
 
 int main()
 {
+    //LinkedListRoutine();
+    DoublyLinkedListRoutine();
+}
+
+void LinkedListRoutine() {
     LinkedList* list = new LinkedList();
     std::cout << "How many numbers would you like to insert?" << std::endl;
     int n, x;
@@ -38,5 +47,21 @@ int main()
     std::cout << "Reversing the list with recursion..." << std::endl;
     list->Reverse(true);
     list->Print();
+}
+
+void DoublyLinkedListRoutine() {
+    DoublyLinkedList* list = new DoublyLinkedList();
+    std::cout << "How many numbers would you like to insert at head?" << std::endl;
+    int n, x;
+    std::cin >> n;
+    for (int i = 0; i < n; i++) {
+        std::cout << "Enter a number: ";
+        std::cin >> x;
+        list->InsertAtHead(x);
+        list->Print();
+    }
+
+    std::cout << "Printing the list in reverse order...";
+    list->ReversePrint();
 }
 
