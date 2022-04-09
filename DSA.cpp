@@ -1,14 +1,17 @@
 #include <iostream>
 #include "LinkedList.h"
 #include "DoublyLinkedList.h"
+#include "Stack.h"
 
 void LinkedListRoutine();
 void DoublyLinkedListRoutine();
+void StackRoutine();
 
 int main()
 {
     //LinkedListRoutine();
-    DoublyLinkedListRoutine();
+    //DoublyLinkedListRoutine();
+    StackRoutine();
 }
 
 void LinkedListRoutine() {
@@ -73,5 +76,30 @@ void DoublyLinkedListRoutine() {
 
     std::cout << "Printing the list in reverse order...";
     list->ReversePrint();
+}
+
+void StackRoutine() {
+    std::cout << "How big would you like stack to be?" << std::endl;
+    int s;
+    std::cin >> s;
+    Stack* stack = new Stack(s);
+
+    std::cout << "How many numbers would you like to push?" << std::endl;
+    int n, x;
+    std::cin >> n;
+    for (int i = 0; i < n; i++) {
+        std::cout << "Enter a number: ";
+        std::cin >> x;
+        stack->Push(x);
+        stack->Print();
+    }
+
+    std::cout << "How many numbers would you like to pop?" << std::endl;
+    int m;
+    std::cin >> m;
+    for (int i = 0; i < m; i++) {
+        stack->Pop();
+        stack->Print();
+    }
 }
 
