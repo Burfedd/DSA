@@ -9,15 +9,16 @@ void StackRoutine();
 
 int main()
 {
-    //LinkedListRoutine();
+    LinkedListRoutine();
     //DoublyLinkedListRoutine();
-    StackRoutine();
+    //StackRoutine();
 }
 
 void LinkedListRoutine() {
-    LinkedList* list = new LinkedList();
+    LinkedList<double>* list = new LinkedList<double>();
     std::cout << "How many numbers would you like to insert?" << std::endl;
-    int n, x;
+    int n;
+    double x;
     std::cin >> n;
     for (int i = 0; i < n; i++) {
         std::cout << "Enter a number: ";
@@ -27,7 +28,8 @@ void LinkedListRoutine() {
     }
 
     std::cout << "Which number and where do you want no insert?" << std::endl;
-    int num, pos;
+    int pos;
+    double num;
     std::cin >> num;
     std::cin >> pos;
     list->Insert(num, pos);

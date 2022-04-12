@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="DSA.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
