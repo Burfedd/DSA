@@ -2,16 +2,19 @@
 #include "LinkedList.h"
 #include "DoublyLinkedList.h"
 #include "Stack.h"
+#include "StackList.h"
 
 void LinkedListRoutine();
 void DoublyLinkedListRoutine();
 void StackRoutine();
+void StackListRoutine();
 
 int main()
 {
-    LinkedListRoutine();
+    //LinkedListRoutine();
     //DoublyLinkedListRoutine();
     //StackRoutine();
+    StackListRoutine();
 }
 
 void LinkedListRoutine() {
@@ -105,3 +108,23 @@ void StackRoutine() {
     }
 }
 
+void StackListRoutine() {
+    StackList<double>* stackList = new StackList<double>();
+    std::cout << "How many numbers would you like to push onto the stack?" << std::endl;
+    int n;
+    double x;
+    std::cin >> n;
+    for (int i = 0; i < n; i++) {
+        std::cout << "Enter a number: ";
+        std::cin >> x;
+        stackList->Push(x);
+        stackList->Print();
+    }
+
+    std::cout << "How many numbers would you like to pop from the stack?" << std::endl;
+    std::cin >> n;
+    for (int i = 0; i < n; i++) {
+        std::cout << "Popping element... Value: " << *(stackList->Pop()) << std::endl;
+        stackList->Print();
+    }
+}
