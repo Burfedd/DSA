@@ -8,13 +8,15 @@ void LinkedListRoutine();
 void DoublyLinkedListRoutine();
 void StackRoutine();
 void StackListRoutine();
+void ReverseStringRoutine();
 
 int main()
 {
     //LinkedListRoutine();
     //DoublyLinkedListRoutine();
     //StackRoutine();
-    StackListRoutine();
+    //StackListRoutine();
+    //ReverseStringRoutine();
 }
 
 void LinkedListRoutine() {
@@ -126,5 +128,17 @@ void StackListRoutine() {
     for (int i = 0; i < n; i++) {
         std::cout << "Popping element... Value: " << *(stackList->Pop()) << std::endl;
         stackList->Print();
+    }
+}
+
+void ReverseStringRoutine() {
+    // Reversing the string using stack data structure
+    std::string input = "abcdef";
+    StackList<char>* stack = new StackList<char>();
+    for (int i = 0; i < input.length(); i++) {
+        stack->Push(input[i]);
+    }
+    for (int j = 0; j < input.length(); j++) {
+        std::cout << stack->Pop();
     }
 }
